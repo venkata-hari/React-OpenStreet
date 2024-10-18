@@ -123,9 +123,9 @@ function ProfileForm() {
                     <Grid item xs={12} md={12} lg={12} className="formContainer">
                         <FormControl className='form'>
                           <Box className='Profile_Management'>Profile Management Application</Box>
-                          <Box sx={{width:"80% !important"}}>
+                          <Box sx={{width:{lg:"80%",md:"90%",xs:'90%'}}}>
                             {(message.name || message.email || message.age) && (
-                                <Alert variant="filled" severity={message.name === "Profile saved successfully!" ? "success" : "error"} sx={{width:'90%',marginBottom:'3%'}}>
+                                <Alert variant="filled" severity={message.name === "Profile saved successfully!" ? "success" : "error"} sx={{width:'100%',marginBottom:'3%'}}>
                                     {message.name || message.email || message.age}
                                 </Alert>
                             )}

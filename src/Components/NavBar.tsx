@@ -14,12 +14,15 @@ const profiledata = localStorage.getItem('profileData');
         <Avatar sx={{height: '30px', width: '30px',marginRight:'8px', bgcolor: deepPurple[500] }}>
                     {profileData?.name?.charAt(0)}
                 </Avatar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            {profileData?.name}
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>       
+              {profileData?.name}
           </Typography>
          {(userid || profiledata )&&<Chip 
          avatar={<Avatar src={display?LocalStorage:Api} />}
-         label={display ? "LocalStorage Data" : "Api Data"} sx={{background:'white'}} />}
+         label={display ? "LocalStorage Data" : "Api Data"} sx={{
+          background:'white',
+          whiteSpace: 'nowrap' 
+          }} />}
         </Toolbar>
       </AppBar>
     </Box>
