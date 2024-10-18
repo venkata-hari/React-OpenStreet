@@ -29,7 +29,7 @@ const handleDelete = () => {
       sx={{
         textAlign: 'center',
         alignItems: 'center',
-        width: {lg:343,xs:'fit-content'},
+        width: {lg:343,xs:320,md:320},
         overflow: 'auto',
         resize: 'horizontal',
         '--icon-size': '100px',
