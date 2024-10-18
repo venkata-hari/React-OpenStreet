@@ -77,7 +77,7 @@ const handleDelete = () => {
           Update
         </Button>
         {(userid || profiledata )&& <Button variant="plain" onClick={handleDelete} color="neutral">
-        Delete
+        {display?"Delete LocalStorage":"Delete Api Data"}
         </Button>}
       </CardActions>
     </Card>
