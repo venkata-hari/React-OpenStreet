@@ -118,7 +118,7 @@ function ProfileForm() {
         <Fragment>
           {loading&&<Loader/>}
             <Box className='root'>
-                <Grid container spacing={8} sx={{ width: '90%' }}>
+                <Grid container spacing={8} sx={{ width: '100%' }}>
                   
                     <Grid item xs={12} md={12} lg={12} className="formContainer">
                         <FormControl className='form'>

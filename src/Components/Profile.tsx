@@ -12,7 +12,7 @@ function Profile() {
     const { profileData, loading, error,display} = useProfile();
     const profileContent = useMemo(() => {
         return (
-            <div>
+            <div style={{padding:'8px'}}>
                 <CardData/>
             </div>
         );

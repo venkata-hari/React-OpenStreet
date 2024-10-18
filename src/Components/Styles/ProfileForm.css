@@ -56,7 +56,8 @@
 
 @media(max-width:930px) {
     .form {
-        width: 95%;
+        padding: 5px !important;
+        width: 100%;
     }
 
 }
