@@ -118,14 +118,14 @@ function ProfileForm() {
         <Fragment>
           {loading&&<Loader/>}
             <Box className='root'>
-                <Grid container spacing={8} sx={{ width: '100%' }}>
+                <Grid container spacing={8}>
                   
                     <Grid item xs={12} md={12} lg={12} className="formContainer">
                         <FormControl className='form'>
                           <Box className='Profile_Management'>Profile Management Application</Box>
-                          <Box sx={{width:{lg:"80%",md:"90%",xs:'90%'}}}>
+                          <Box sx={{width:{lg:'80%',xs:'90%'}}}>
                             {(message.name || message.email || message.age) && (
-                                <Alert variant="filled" severity={message.name === "Profile saved successfully!" ? "success" : "error"} sx={{width:'100%',marginBottom:'3%'}}>
+                                <Alert variant="filled" severity={message.name === "Profile saved successfully!" ? "success" : "error"} sx={{marginBottom:'3%'}}>
                                     {message.name || message.email || message.age}
                                 </Alert>
                             )}
