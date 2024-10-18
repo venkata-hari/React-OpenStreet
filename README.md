@@ -26,12 +26,12 @@ cd project-name
 yarn install
 ```
 ### Development Mode
-To start the application in development mode (Using the JSON-server:https://jsonserver-e0hs.onrender.com/users),run:
+To start the application in development mode (Using the JSON-server:https://jsonserver-e0hs.onrender.com/users), run:
 ```bash
 npm run dev
 ```
 ### Production Mode
-To start the application in Production mode (using the mock API:https://63033d7d9eb72a839d7bce9e.mockapi.io/user), run:
+To start the application in Production mode (Using the mock API:https://63033d7d9eb72a839d7bce9e.mockapi.io/user), run:
 ```bash
 npm run prod
 ```
