@@ -1,0 +1,62 @@
+.root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-content: center;
+
+}
+
+.alertmessage {
+    color: red;
+    font-weight: 700;
+    margin-top: -20px !important;
+    margin-bottom: 5px !important;
+}
+
+.form {
+    width: 30%;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid grey !important;
+    border-radius: 6px;
+    padding: 3% !important;
+}
+
+.inputfield {
+    width:100%;
+    margin-top: 3% !important;
+}
+
+
+.formContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.sideimage {
+    object-fit: cover;
+    width: 200px;
+}
+.Profile_Management{
+    font-size:20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+@media(max-width:930px) {
+    .form {
+        width: 95%;
+    }
+
+}
