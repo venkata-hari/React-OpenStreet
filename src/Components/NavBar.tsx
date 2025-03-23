@@ -1,28 +1,42 @@
-import { Avatar,Chip,Typography,Box,Toolbar,AppBar } from '@mui/material';
-import { useProfile } from '../ContextApi/GobalState';
-import {LocalStorage,Api} from './Assets/index'
+import { Avatar, Typography, Box, Toolbar, AppBar, Button, IconButton } from '@mui/material';
 import { deepPurple } from '@mui/material/colors';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useMediaQuery } from '@mui/material';
+
 export default function NavBar() {
-const {profileData,display}=useProfile()
-const userid = localStorage.getItem('userid');
-const profiledata = localStorage.getItem('profileData');
+  const username = localStorage.getItem('username') || 'Guest';
+  const navigate = useNavigate();
+  const isMobile = useMediaQuery('(max-width:600px)'); 
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/'); 
+    window.location.reload();
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-        <Avatar sx={{height: '30px', width: '30px',marginRight:'8px', bgcolor: deepPurple[500] }}>
-                    {profileData?.name?.charAt(0)}
-                </Avatar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>       
-              {profileData?.name}
+          {isMobile && (
+            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+              <MenuIcon />
+            </IconButton>
+          )}
+
+          <Avatar sx={{ height: 35, width: 35, marginRight: 2, bgcolor: deepPurple[500] }} onClick={()=>navigate('/profile')}>
+            {username.charAt(0).toUpperCase()}
+          </Avatar>
+
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            {username}
           </Typography>
-         {(userid || profiledata )&&<Chip 
-         avatar={<Avatar src={display?LocalStorage:Api} />}
-         label={display ? "LocalStorage Data" : "Api Data"} sx={{
-          background:'white',
-          whiteSpace: 'nowrap' 
-          }} />}
+
+          <Button variant="contained" color="secondary" onClick={handleLogout}>
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

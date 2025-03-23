@@ -1,14 +1,7 @@
 .rootcontainer{
   display:flex;
-  padding:10px;
-}
-.card_RightImage{
-    width:90px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    background-color: rgb(216, 210, 210);
-    margin-right: 10px;
-    border-radius: 10px;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+ height: 80vh;
 }
