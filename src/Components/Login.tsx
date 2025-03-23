@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Box, FormControl, TextField, Button, Alert, Grid } from '@mui/material';
 import Loader from './Loader';
@@ -40,30 +40,9 @@ function Login() {
         if (error.username || error.password) return;
 
         setLoading(true);
-
-        // Get user's geolocation
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const { latitude, longitude } = position.coords;
-                    localStorage.setItem('latitude', latitude.toString());
-                    localStorage.setItem('longitude', longitude.toString());
-
-                    console.log(`Location saved: ${latitude}, ${longitude}`);
-                    completeLogin();
-                },
-                (error) => {
-                    console.error("Error getting location:", error.message);
-                    completeLogin(); // Proceed even if location fails
-                }
-            );
-        } else {
-            console.warn("Geolocation not supported");
-            completeLogin();
-        }
+        completeLogin();
     };
 
-    // Function to complete login process
     const completeLogin = () => {
         setMessage('Login successful!');
         const userId = nanoid();

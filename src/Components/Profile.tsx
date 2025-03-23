@@ -11,14 +11,28 @@ import { Fragment } from 'react/jsx-runtime';
 import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import './Cards/Styles.css';
+import { useEffect } from 'react';
 
 export default function CardCard() {
   const userid = localStorage.getItem('userid') || 'No ID';
   const username = localStorage.getItem('username') || 'Guest';
   const navigate = useNavigate();
-
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          localStorage.setItem('latitude', latitude.toString());
+          localStorage.setItem('longitude', longitude.toString());
+        },
+        (error) => {
+          console.error('Error getting location:', error.message);
+        }
+      );
+    }
+  }, []);
   const handleNavigate = () => {
-    navigate('/map'); // Navigate to the Map page
+    navigate('/map');
   };
 
   return (
