@@ -26,7 +26,7 @@ export default function NavBar() {
             </IconButton>
           )}
 
-          <Avatar sx={{ height: 35, width: 35, marginRight: 2, bgcolor: deepPurple[500] }} onClick={()=>navigate('/profile')}>
+          <Avatar sx={{ height: 35, width: 35, marginRight: 2, bgcolor: deepPurple[500] }} onClick={()=>navigate('/dashboard')}>
             {username.charAt(0).toUpperCase()}
           </Avatar>
 

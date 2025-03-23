@@ -51,7 +51,7 @@ function Login() {
 
         setTimeout(() => {
             setLoading(false);
-            navigate('/profile');
+            navigate('/dashboard');
             setFormData({ username: '', password: '' });
         }, 1000);
     };
